@@ -1,0 +1,71 @@
+body {
+    background-color: #e2dbc8;
+}
+
+.container {
+    display: flex;
+}
+
+.newForm {
+    margin-top: 4px;
+}
+
+.newProject {
+    display: flex;
+    margin-left: 50px;
+    gap: 4px;
+    align-items: center;
+}
+
+.projectTitleRow {
+    display: flex;
+    gap: 8px;
+}
+
+.header {
+    margin: 4px 4px 4px 4px;
+}
+
+.project {
+    border: 2px solid black;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+.projectHeading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.projectTitle {
+    font-size: 32px;
+}
+
+.titleRow,
+.descriptionRow,
+.dueDateRow,
+.priorityRow,
+.submitRow {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+table {
+    border: 2px solid #94866d;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #b8a282;
+    border: 2px solid black;
+    padding: 4px;
+}
+
+td {
+    background-color: #d8ccb4;
+    border: 1px solid #94866d;
+    padding: 4px;
+}
