@@ -94,11 +94,6 @@ function createTask(id, title, description, dueDate, priority, e) {
     removeBtnElement.setAttribute('id', 'remove');
     removeBtnElement.classList.add('remove');
 
-
-
-
-
-
     titleElement.textContent = `${title}`;
     descriptionElement.textContent = `${description}`;
     // dueDateElement.textContent = `${dueDate}`;
@@ -120,6 +115,13 @@ function createTask(id, title, description, dueDate, priority, e) {
     removeBtnTableElement.appendChild(removeBtnElement);
     taskCard.appendChild(removeBtnTableElement);
 
+    if (priorityElement.textContent === 'Low') {
+        taskCard.classList.add('low');
+    } else if (priorityElement.textContent === 'Medium') {
+        taskCard.classList.add('medium');
+    } else if (priorityElement.textContent === 'High') {
+        taskCard.classList.add('high')
+    }
     removeBtnElement.addEventListener('click', removeTask);
 }
 function createProject(e, projectTitle) {
@@ -155,6 +157,7 @@ function createProject(e, projectTitle) {
     document.getElementById('newProjectBtn').disabled = false;
 
     const projectTable = document.createElement('table');
+    projectTable.setAttribute('id', 'projectTable');
     projectTable.classList.add('projectTable');
     const tableHeaders = document.createElement('tr');
 
@@ -177,10 +180,65 @@ function createProject(e, projectTitle) {
     tableHeaders.appendChild(priorityHeader);
     tableHeaders.appendChild(removeHeader);
 
+    // titleHeader.addEventListener('click', sortTable);
+    // descriptionHeader.addEventListener('click', sortTable(1));
+    // dueDateHeader.addEventListener('click', sortTable(2));
+
     console.log('hello from createproject')
 }
 
-
+// function sortTable(n) {
+//     // From w3schools.com how to sort table js
+//     console.log("Hello from sortTable");
+//     let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+//     table = document.getElementById('projectTable');
+//     switching = true;
+//     // Set the sorting direction to ascending:
+//     dir = "asc";
+//     // make a loop that will continue until no switching has been done:
+//     while (switching) {
+//         // Start by saying: no switching is done:
+//         switching = false;
+//         rows = table.rows;
+//         // Loop through all table rows (except the first, which contains table headers):
+//         for (i = 1; i < (rows.length -1); i++) {
+//             //Start by saying there should be no switching:
+//             shouldSwitch = false;
+//             // Get the two elements you want to compare, one from current row and one from the next:
+//             x = rows[i].getElementsByTagName("td")[n];
+//             y = rows[i].getElementsByTagName("td")[n];
+//             console.log(x);
+//             console.log(y);
+//             // Check if the two rows should switch place, based on the direction, asc or desc:
+//             if (dir == 'asc') {
+//                 if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+//                     // If so, mark as a switch and break the loop:
+//                     shouldSwitch = true;
+//                     break;
+//                 }
+//             } else if (dir == "desc") {
+//                 if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+//                     //If so, mark as a switch and break the loop:
+//                     shouldSwitch = true;
+//                     break;
+//                 }
+//             }
+//         }
+//         if (shouldSwitch) {
+//             // If a switch has been marked, make the switch and mark that a switch has been done:
+//             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+//             switching = true;
+//             // Each tiem a switch is done increase this count by 1:
+//             switchcount ++;
+//         } else {
+//             // If no switching has been done AND the direction is "asc", set the direction to "desc" and run the while loop again.
+//             if (switchcount == 0 && dir == "asc") {
+//                 dir = "desc";
+//                 switching = true;
+//             }
+//         }
+//     }
+// }
 
 export {
     createTask,

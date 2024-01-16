@@ -69,3 +69,15 @@ td {
     border: 1px solid #94866d;
     padding: 4px;
 }
+
+.low {
+    border-left: 3px solid green;
+}
+
+.medium {
+    border-left: 3px solid yellow;
+}
+
+.high {
+    border-left: 3px solid red;
+}
