@@ -1,5 +1,5 @@
 import { format, parseISO } from 'date-fns'
-import { createForm, removeTask, clearProjectForm, removeProject } from "./form";
+import { createForm, removeTask, clearProjectForm, removeProject, hideProject } from "./form";
 
 // divs
 // function createTask(id, title, description, dueDate, priority, e) {
@@ -147,6 +147,12 @@ function createProject(e, projectTitle) {
     projectHeading.appendChild(newTaskBtn);
     newTaskBtn.addEventListener('click', createForm);
     clearProjectForm();
+
+    const hideProjectBtn = document.createElement('button');
+    hideProjectBtn.setAttribute('id', 'hideProjectButton');
+    hideProjectBtn.textContent = 'Hide Project';
+    projectHeading.appendChild(hideProjectBtn);
+    hideProjectBtn.addEventListener('click', hideProject);
 
     const removeProjectBtn = document.createElement('button');
     removeProjectBtn.setAttribute('id', 'removeProjectButton');

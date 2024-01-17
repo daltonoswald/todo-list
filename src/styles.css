@@ -4,6 +4,9 @@ body {
 
 .container {
     display: flex;
+    margin-bottom: 4px;
+    align-items: center;
+    height: 50px;
 }
 
 .newForm {
@@ -12,9 +15,12 @@ body {
 
 .newProject {
     display: flex;
+    padding: 10px;
     margin-left: 50px;
     gap: 4px;
     align-items: center;
+    border: 2px solid #b8a282;
+    border-radius: 10px;
 }
 
 .projectTitleRow {
@@ -28,6 +34,7 @@ body {
 
 .project {
     border: 2px solid black;
+    border-radius: 8px;
     padding: 4px;
     margin-bottom: 4px;
 }
@@ -41,6 +48,11 @@ body {
 
 .projectTitle {
     font-size: 32px;
+}
+
+.projectTable {
+    width: 100%;
+    margin: 0px 4px 0px 4px;
 }
 
 .titleRow,

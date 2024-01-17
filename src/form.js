@@ -224,6 +224,15 @@ function removeProject(e) {
     e.target.parentElement.parentElement.remove();
 }
 
+function hideProject(e) {
+    const childTasks = e.target.parentElement.nextElementSibling;
+    if (childTasks.style.display === 'none') {
+        childTasks.style.display = 'table'
+    } else {
+        childTasks.style.display = 'none'
+    }
+}
+
 export {
     createForm,
     addTask,
@@ -232,4 +241,5 @@ export {
     createProjectForm,
     clearProjectForm,
     removeProject, 
+    hideProject,
 }
