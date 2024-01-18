@@ -41,6 +41,12 @@ body {
 
 .projectHeading {
     display: flex;
+    justify-content: space-between;
+}
+
+.projectHeadingLeft,
+.projectHeadingRight {
+    display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
@@ -52,7 +58,21 @@ body {
 
 .projectTable {
     width: 100%;
-    margin: 0px 4px 0px 4px;
+    /* margin: 0px 4px 0px 4px; */
+}
+
+#titleColumn {
+    width: 20%;
+}
+
+#descriptionColumn {
+    width: 50%;
+}
+
+#dueDateColumn,
+#priorityColumn,
+#removeColumn {
+    width: 10%;
 }
 
 .titleRow,
@@ -80,16 +100,17 @@ td {
     background-color: #d8ccb4;
     border: 1px solid #94866d;
     padding: 4px;
+    text-align: center;
 }
 
 .low {
-    border-left: 3px solid green;
+    border-left: 2px solid green;
 }
 
 .medium {
-    border-left: 3px solid yellow;
+    border-left: 2px solid yellow;
 }
 
 .high {
-    border-left: 3px solid red;
+    border-left: 2px solid red;
 }

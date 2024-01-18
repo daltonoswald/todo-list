@@ -138,27 +138,38 @@ function createProject(e, projectTitle) {
     let projectTitleElement = document.createElement('div');
     projectTitleElement.classList.add('projectTitle');
     projectTitleElement.textContent = `${projectTitleText.value}`
-    projectHeading.appendChild(projectTitleElement)
-    // newProjectElement.appendChild(projectTitleElement);
+    // projectHeading.appendChild(projectTitleElement)
 
     const newTaskBtn = document.createElement('button');
     newTaskBtn.setAttribute('id', 'newTaskBtn');
     newTaskBtn.textContent = "New Task";
-    projectHeading.appendChild(newTaskBtn);
+    // projectHeading.appendChild(newTaskBtn);
     newTaskBtn.addEventListener('click', createForm);
     clearProjectForm();
+
+    const projectHeadingLeft = document.createElement('div');
+    projectHeadingLeft.classList.add('projectHeadingLeft');
+    projectHeadingLeft.appendChild(projectTitleElement);
+    projectHeadingLeft.appendChild(newTaskBtn);
+    projectHeading.appendChild(projectHeadingLeft);
 
     const hideProjectBtn = document.createElement('button');
     hideProjectBtn.setAttribute('id', 'hideProjectButton');
     hideProjectBtn.textContent = 'Hide Project';
-    projectHeading.appendChild(hideProjectBtn);
+    // projectHeading.appendChild(hideProjectBtn);
     hideProjectBtn.addEventListener('click', hideProject);
 
     const removeProjectBtn = document.createElement('button');
     removeProjectBtn.setAttribute('id', 'removeProjectButton');
     removeProjectBtn.textContent = "Remove Project";
-    projectHeading.appendChild(removeProjectBtn);
+    // projectHeading.appendChild(removeProjectBtn);
     removeProjectBtn.addEventListener('click', removeProject)
+
+    const projectHeadingRight = document.createElement('div');
+    projectHeadingRight.classList.add('projectHeadingRight');
+    projectHeadingRight.appendChild(hideProjectBtn);
+    projectHeadingRight.appendChild(removeProjectBtn);
+    projectHeading.appendChild(projectHeadingRight);
     
     document.getElementById('newProjectBtn').disabled = false;
 
@@ -169,14 +180,19 @@ function createProject(e, projectTitle) {
 
     const titleHeader = document.createElement('th');
     titleHeader.textContent = 'Task';
+    titleHeader.setAttribute('id', 'taskColumn');
     const descriptionHeader = document.createElement('th');
     descriptionHeader.textContent = 'Description';
+    descriptionHeader.setAttribute('id', 'descriptionColumn');
     const dueDateHeader = document.createElement('th');
     dueDateHeader.textContent = 'Due Date';
+    dueDateHeader.setAttribute('id', 'dueDateColumn');
     const priorityHeader = document.createElement('th');
     priorityHeader.textContent = 'Priority';
+    priorityHeader.setAttribute('id', 'priorityColumn');
     const removeHeader = document.createElement('th');
     removeHeader.textContent = 'Remove';
+    removeHeader.setAttribute('id', 'removeColumn');
 
     newProjectElement.appendChild(projectTable);
     projectTable.appendChild(tableHeaders);

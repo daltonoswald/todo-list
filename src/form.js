@@ -124,7 +124,7 @@ function createForm(e) {
     submitRow.appendChild(submitCancel);
 
 
-    e.target.parentElement.parentElement.appendChild(newForm);
+    e.target.parentElement.parentElement.parentElement.appendChild(newForm);
 
     newForm.onsubmit= addTask;
     console.log('Hello from form.js');
@@ -225,7 +225,7 @@ function removeProject(e) {
 }
 
 function hideProject(e) {
-    const childTasks = e.target.parentElement.nextElementSibling;
+    const childTasks = e.target.parentElement.parentElement.nextElementSibling;
     if (childTasks.style.display === 'none') {
         childTasks.style.display = 'table'
     } else {
