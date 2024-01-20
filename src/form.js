@@ -221,7 +221,7 @@ function clearProjectForm(e) {
 }
 
 function removeProject(e) {
-    e.target.parentElement.parentElement.remove();
+    e.target.parentElement.parentElement.parentElement.remove();
 }
 
 function hideProject(e) {
