@@ -126,10 +126,11 @@ function createForm(e) {
 
     e.target.parentElement.parentElement.parentElement.appendChild(newForm);
 
-    newForm.onsubmit= addTask;
+    newForm.onsubmit= addTask
+    // newForm.onsubmit= document.querySelectorAll('.newTaskBtn').forEach(e => e.disabled = false);
     console.log('Hello from form.js');
-
-    document.getElementById('newTaskBtn').disabled = true;
+    // document.getElementById('newTaskBtn').disabled = true;
+    document.querySelectorAll('.newTaskBtn').forEach(e => e.disabled = true);
 }
 
 
@@ -148,6 +149,7 @@ function addTask (e) {
     createTask((idCount), titleText.value, descriptionText.value, dueDateText.value, priorityText.value, e);
     console.log(taskList);
     document.getElementById('newTaskBtn').disabled = false;
+    newForm.onsubmit= document.querySelectorAll('.newTaskBtn').forEach(e => e.disabled = false);
     clearTaskForm();
 }
 

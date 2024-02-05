@@ -142,6 +142,7 @@ function createProject(e, projectTitle) {
 
     const newTaskBtn = document.createElement('button');
     newTaskBtn.setAttribute('id', 'newTaskBtn');
+    newTaskBtn.classList.add('newTaskBtn');
     newTaskBtn.textContent = "New Task";
     // projectHeading.appendChild(newTaskBtn);
     newTaskBtn.addEventListener('click', createForm);
@@ -171,7 +172,7 @@ function createProject(e, projectTitle) {
     projectHeadingRight.appendChild(removeProjectBtn);
     projectHeading.appendChild(projectHeadingRight);
     
-    document.getElementById('newProjectBtn').disabled = false;
+    document.getElementsByClassName('newProjectBtn').disabled = false;
 
     const projectTable = document.createElement('table');
     projectTable.setAttribute('id', 'projectTable');

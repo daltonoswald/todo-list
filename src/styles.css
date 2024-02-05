@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body {
     background-color: #e2dbc8;
+    max-width: 90vw;
+    margin: auto;
+    font-family: Roboto;
+}
+
+button {
+    font-family: Roboto;
 }
 
 .container {
@@ -35,8 +44,8 @@ body {
 .project {
     border: 2px solid black;
     border-radius: 8px;
-    padding: 4px;
-    margin-bottom: 4px;
+    padding: 1vh;
+    margin-bottom: 2vh;
 }
 
 .projectHeading {
