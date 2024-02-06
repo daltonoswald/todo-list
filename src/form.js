@@ -131,6 +131,7 @@ function createForm(e) {
     console.log('Hello from form.js');
     // document.getElementById('newTaskBtn').disabled = true;
     document.querySelectorAll('.newTaskBtn').forEach(e => e.disabled = true);
+    document.getElementById('newProjectBtn').disabled = true;
 }
 
 
@@ -149,14 +150,15 @@ function addTask (e) {
     createTask((idCount), titleText.value, descriptionText.value, dueDateText.value, priorityText.value, e);
     console.log(taskList);
     document.getElementById('newTaskBtn').disabled = false;
-    newForm.onsubmit= document.querySelectorAll('.newTaskBtn').forEach(e => e.disabled = false);
     clearTaskForm();
 }
 
 function clearTaskForm() {
     // document.getElementById('newForm').reset();
     document.getElementById('newForm').remove();
-    document.getElementById('newTaskBtn').disabled = false;
+    // document.getElementById('newTaskBtn').disabled = false;
+    document.querySelectorAll('.newTaskBtn').forEach(e => e.disabled = false);
+    document.getElementById('newProjectBtn').disabled = false;
 }
 
 function removeTask(e) {
@@ -214,12 +216,14 @@ function createProjectForm() {
     projectSubmitCancel.addEventListener('click', clearProjectForm);
     newProject.onsubmit= createProject;
     document.getElementById('newProjectBtn').disabled = true;
+    document.querySelectorAll('.newTaskBtn').forEach(e => e.disabled = true);
 }
 
 function clearProjectForm(e) {
     // document.getElementById('newForm').reset();
     document.getElementById('newProject').remove();
     document.getElementById('newProjectBtn').disabled = false;
+    document.querySelectorAll('.newTaskBtn').forEach(e => e.disabled = false);
 }
 
 function removeProject(e) {

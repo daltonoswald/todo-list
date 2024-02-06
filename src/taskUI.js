@@ -208,6 +208,7 @@ function createProject(e, projectTitle) {
     // dueDateHeader.addEventListener('click', sortTable(2));
 
     console.log('hello from createproject')
+    document.querySelectorAll('.newTaskBtn').forEach(e => e.disabled = false);
 }
 
 // function sortTable(n) {
